@@ -18,14 +18,8 @@ reporterAssignments.factory('AssignmentFactory',
 
 // REPORTERS
 
-factory.reporters = [
-  {name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) },
-  {name: "Dob Dobson", id: 2, yearsWorked: 1, birthday: Date(1987, 5, 1)},
-  {name: "Shana Shanason", id: 3, yearsWorked: 3, birthday: Date(1967, 6, 1)},
-];
-
-  factory.addReporter = function() {
-    factory.assignments.push({ name: name, reporters: [],
+  factory.addReporter = function(assignment) {
+    assignment.push({ name: name, reporters: [],
       id: factory.assignments.length + 1 });
   };
 

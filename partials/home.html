@@ -1,33 +1,49 @@
-<div class="row">
+<div class="row" ng-controller="AssignmentCtrl">
 
-  <div class="col-xs-6" ng-controller="AssignmentCtrl">
+  <div class="col-xs-6" >
       <h3 class="well">Assignments <span class="badge">{{assignments.length}}</span></h3>
     <ul>
       <li ng-repeat="assignment in assignments">
         <h4><a ng-click="assignment.show = !assignment.show">{{assignment.name}}</a></h4>
+
           <div ng-show="assignment.show">
+            <a ng-click="reporterForm(assignment)"
+              class="btn btn-xs btn-primary">
+              Add reporter to assignment
+            <a>
+            <h6>Reporters assigned:</h6>
             <ul>
               <li ng-repeat="reporter in assignment.reporters">
                   {{reporter.name}}
               </li>
             </ul>
-            <a ng-click="" class="btn btn-xs btn-danger">Add reporter<a>
           </div>
+
       </li>
     </ul>
     <br>
-    <button ng-click="assignmentAddShow = true" class="btn btn-primary">Add assignment</button>
+    <button ng-click="toggleAssignmentForm()" class="btn btn-primary btn-sm">
+      Add assignment
+    </button>
   </div>
 
-  <div class="col-xs-6" ng-hide="assignmentAddShow">
-    <form ng-submit="addThenHome()" class="well">
-      <fieldset>
-        <h3 class="page-header">Add assignment:</h3>
-        <div class=form-group>
-          <input type="text" ng-model="assignmentName" class="form-control">
-        </div>
-        <button action="submit" class="btn btn-primary">Add</button>
-      </fieldset>
+  <div class="col-xs-6" ng-show="assignmentForm">
+    <form class="well">
+      <h3 class="page-header">Add assignment:</h3>
+      <div class=form-group>
+        <input type="text" ng-model="assignmentName" class="form-control">
+      </div>
+      <button ng-click="addAssignmentThen()" class="btn btn-info">Add</button>
+    </form>
+  </div>
+
+  <div ng-show="reporterForm">
+    <form class="well">
+      <h3 class="page-header">Add reporter to {{}}:</h3>
+      <div class=form-group>
+        <input type="text" ng-model="assignmentName" class="form-control">
+      </div>
+      <button ng-click="addAssignmentThen()" class="btn btn-info">Add</button>
     </form>
   </div>
 

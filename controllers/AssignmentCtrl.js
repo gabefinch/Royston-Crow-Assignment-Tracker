@@ -1,20 +1,20 @@
 reporterAssignments.controller('AssignmentCtrl',
 function AssignmentCtrl($scope, $state, AssignmentFactory) {
 
+  $scope.assignmentForm = false;
+  $scope.reporterForm = false;
   $scope.assignments = AssignmentFactory.assignments;
-
   $scope.AssignmentFactory = AssignmentFactory;
 
-  $scope.addThenHome = function() {
-    var newAssignment = AssignmentFactory.addAssignment($scope.assignmentName);
-    $scope.reportersPush.forEach(function(reporter) {
-      newAssignment.reporters.push(reporter);
-    });
-    // $state.go('home');
+  $scope.addAssignmentThen = function() {
+    AssignmentFactory.addAssignment($scope.assignmentName);
+    $scope.assignmentName = null;
+    $scope.assignmentAddShow = false;
   };
 
-  $scope.assignmentForm = function() {
-
-  };
+  $scope.toggleAssignmentForm = function() {
+    $scope.assignmentForm = !$scope.assignmentForm;
+    $scope.reporterForm = false;
+  }
 
 });
