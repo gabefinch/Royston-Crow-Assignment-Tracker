@@ -5,8 +5,11 @@ function AssignmentCtrl($scope, $state, AssignmentFactory) {
 
   $scope.AssignmentFactory = AssignmentFactory;
 
-  $scope.addThenHome = function(name) {
-    AssignmentFactory.addAssignment(name);
+  $scope.addThenHome = function() {
+    var newAssignment = AssignmentFactory.addAssignment($scope.assignmentName);
+    $scope.reportersPush.forEach( function(reporter) {
+      newAssignment.reporters.push(reporter);
+    });
     $state.go('home');
   };
 

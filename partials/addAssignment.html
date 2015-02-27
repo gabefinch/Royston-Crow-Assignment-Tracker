@@ -1,29 +1,47 @@
-<div class="row" >
+<div ng-controller="AssignmentCtrl" class="row>">
   <div class="col-xs-6" ng-controller="AssignmentCtrl">
     <div class="page-header">
       <h3>Assignments</h3>
     </div>
     <ul>
       <li ng-repeat="assignment in assignments">
-        <h4>{{assignment.name}}</h4>
+        <h4><a ng-click="">{{assignment.name}}</a></h4>
+          <ul>
+              <li ng-repeat="reporter in assignment.reporters">
+                  {{reporter.name}}
+              </li>
+          </ul>
       </li>
     </ul>
-    <a class="btn btn-default btn-dasabled">Add assignment</a>
+    <br>
+    <a ui-sref="addAssignment" class="btn btn-default btn-disabled">Add assignment</a>
   </div>
 
-  <div class="col-xs-6" ng-controller="AssignmentCtrl">
-    <div class="container">
-      <div class="well">
-        <div class="page-header">
-          <h3>Add assignment:</h3>
-        </div>
-        <form ng-submit="addThenHome(assignmentName)">
-          <div class=form-group>
-            <input type="text" ng-model="assignmentName">
-          </div>
-          <button action="submit" class="btn btn-primary">Add</button>
-        </form>
+  <div class="col-xs-6">
+    <div class="container well">
+
+      <div class="page-header">
+        <h3>Add assignment:</h3>
       </div>
+
+      <form ng-submit="addThenHome()" class="form-horizontal">
+        <div class=form-group>
+          <input type="text" ng-model="assignmentName">
+        </div>
+        <div class=form-group>
+          <h5>Add reporters to this assignment:</h5>
+          
+          <span ng-repeat="reporter in AssignmentFactory.reporters">
+            <label for="{{reporter.name}}">
+            <input type="checkbox" ng-model="$parent.reportersAdd" id="{{reporter.name}}"
+              name="reporterChoice" ng-value="{{reporter}}">
+              {{reporter.name}}
+            </label>
+          <span>
+
+        </div>
+        <button action="submit" class="btn btn-primary">Add</button>
+      </form>
     </div>
   </div>
 </div>
