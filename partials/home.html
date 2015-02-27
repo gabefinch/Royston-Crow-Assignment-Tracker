@@ -1,34 +1,34 @@
 <div class="row">
 
   <div class="col-xs-6" ng-controller="AssignmentCtrl">
-    <div class="page-header">
-      <h3>Assignments</h3>
-    </div>
+      <h3 class="well">Assignments <span class="badge">{{assignments.length}}</span></h3>
     <ul>
       <li ng-repeat="assignment in assignments">
-        <h4><a ng-click="">{{assignment.name}}</a></h4>
-          <ul>
+        <h4><a ng-click="assignment.show = !assignment.show">{{assignment.name}}</a></h4>
+          <div ng-show="assignment.show">
+            <ul>
               <li ng-repeat="reporter in assignment.reporters">
                   {{reporter.name}}
               </li>
-          </ul>
+            </ul>
+            <a ng-click="" class="btn btn-xs btn-danger">Add reporter<a>
+          </div>
       </li>
     </ul>
     <br>
-    <a ui-sref="addAssignment" class="btn btn-success">Add assignment</a>
+    <button ng-click="assignmentAddShow = true" class="btn btn-primary">Add assignment</button>
   </div>
 
-  <div class="col-xs-6" ng-controller="ReporterCtrl">
-    <div class="page-header">
-      <h3>Reporters</h3>
-    </div>
-    <ul>
-        <li ng-repeat="reporter in reporters">
-          <h4><a>{{reporter.name}}<a></h4>
-        </li>
-    </ul>
-    <br>
-    <a ui-sref="addReporter" class="btn btn-success">Add reporter</a>
+  <div class="col-xs-6" ng-hide="assignmentAddShow">
+    <form ng-submit="addThenHome()" class="well">
+      <fieldset>
+        <h3 class="page-header">Add assignment:</h3>
+        <div class=form-group>
+          <input type="text" ng-model="assignmentName" class="form-control">
+        </div>
+        <button action="submit" class="btn btn-primary">Add</button>
+      </fieldset>
+    </form>
   </div>
 
 </div>

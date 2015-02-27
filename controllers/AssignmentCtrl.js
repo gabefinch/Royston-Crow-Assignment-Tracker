@@ -7,10 +7,14 @@ function AssignmentCtrl($scope, $state, AssignmentFactory) {
 
   $scope.addThenHome = function() {
     var newAssignment = AssignmentFactory.addAssignment($scope.assignmentName);
-    $scope.reportersPush.forEach( function(reporter) {
+    $scope.reportersPush.forEach(function(reporter) {
       newAssignment.reporters.push(reporter);
     });
-    $state.go('home');
+    // $state.go('home');
+  };
+
+  $scope.assignmentForm = function() {
+
   };
 
 });

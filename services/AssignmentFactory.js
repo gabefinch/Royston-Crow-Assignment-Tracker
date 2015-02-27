@@ -4,9 +4,9 @@ reporterAssignments.factory('AssignmentFactory',
 
 // ASSIGNMENTS
   factory.assignments = [
-    {name: "UFO sightings", id: 1, reporters: []},
-    {name: "Health Inspection Fails", id: 2, reporters: []},
-    {name: "National Government Fails", id: 3, reporters: []},
+    {name: "UFO sightings", id: 1, reporters: [{name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) }]},
+    {name: "Health Inspection Fails", id: 2, reporters: [{name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) }]},
+    {name: "National Government Fails", id: 3, reporters: [{name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) }]},
   ];
 
   factory.addAssignment = function(name) {
