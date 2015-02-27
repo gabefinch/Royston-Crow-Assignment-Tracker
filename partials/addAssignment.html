@@ -1,0 +1,23 @@
+<div class="row" >
+  <div class="col-xs-6" ng-controller="AssignmentCtrl">
+    <div class="page-header">
+      <h3>Assignments</h3>
+    </div>
+    <ul>
+      <li ng-repeat="assignment in assignments">
+        <h4>{{assignment.name}}</h4>
+      </li>
+    </ul>
+    <a ui-sref="addAssignment" class="btn btn-success">Add assignment</a>
+  </div>
+
+  <div class="col-xs-6" ng-controller="AssignmentCtrl">
+    <div class="container">
+      <div class="well">
+        <div class="page-header">
+          <h3>Reporters</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
