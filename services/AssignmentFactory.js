@@ -18,9 +18,8 @@ reporterAssignments.factory('AssignmentFactory',
 
 // REPORTERS
 
-  factory.addReporter = function(assignment) {
-    assignment.push({ name: name, reporters: [],
-      id: factory.assignments.length + 1 });
+  factory.addReporter = function(assignment, name, years, bday) {
+    assignment.reporters.push({name: name, years: years, bday: bday});
   };
 
   return factory;

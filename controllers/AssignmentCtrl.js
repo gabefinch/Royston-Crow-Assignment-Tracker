@@ -9,12 +9,19 @@ function AssignmentCtrl($scope, $state, AssignmentFactory) {
   $scope.addAssignmentThen = function() {
     AssignmentFactory.addAssignment($scope.assignmentName);
     $scope.assignmentName = null;
-    $scope.assignmentAddShow = false;
+    $scope.assignmentForm = false;
   };
 
   $scope.toggleAssignmentForm = function() {
     $scope.assignmentForm = !$scope.assignmentForm;
     $scope.reporterForm = false;
-  }
+  };
+
+  $scope.addReporterThen = function() {
+    console.log($scope.repname);
+    console.log($scope.repYears);
+    console.log($scope.repBday);
+
+  };
 
 });
