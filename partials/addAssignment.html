@@ -8,15 +8,21 @@
         <h4>{{assignment.name}}</h4>
       </li>
     </ul>
-    <a ui-sref="addAssignment" class="btn btn-success">Add assignment</a>
+    <a class="btn btn-default btn-dasabled">Add assignment</a>
   </div>
 
   <div class="col-xs-6" ng-controller="AssignmentCtrl">
     <div class="container">
       <div class="well">
         <div class="page-header">
-          <h3>Reporters</h3>
+          <h3>Add assignment:</h3>
         </div>
+        <form ng-submit="addThenHome(assignmentName)">
+          <div class=form-group>
+            <input type="text" ng-model="assignmentName">
+          </div>
+          <button action="submit" class="btn btn-primary">Add</button>
+        </form>
       </div>
     </div>
   </div>

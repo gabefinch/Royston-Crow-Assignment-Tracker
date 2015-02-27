@@ -8,8 +8,8 @@ reporterAssignments.factory('AssignmentFactory',
 
   ];
 
-  factory.addAssignment = function() {
-    factory.assignments.push({ name: "", reporters: [],
+  factory.addAssignment = function(name) {
+    factory.assignments.push({ name: name, reporters: [],
       id: factory.assignments.length + 1 });
   };
 
