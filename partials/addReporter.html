@@ -1,20 +1,23 @@
-<div ng-show="addRepForm">
-  <form ng-submit="addReporterThen()" class="well">
-    <div class="form-group">
-      <label for="name">Name
-        <input ng-model="repName" type="text" name="name" class="form-control">
-      </label>
-    </div>
-    <div class="form-group">
-      <label for="years">Years of service
-        <input ng-model="repYears" type="number" name="years" class="form-control">
-      <label>
-    </div>
-    <div>
-      <label for="bday">Birthday
-        <input ng-model="repBday" type="date" name="bday" class="form-control">
-      <label>
-    </div>
-    <button type="submit" class="btn btn-xs btn-danger">Assign reporter</button>
-  </form>
+<div ng-controller="ReporterCtrl">
+  <div>
+    <h4>Add reporter to {{assignment.name}}</h4>
+    <form ng-submit="addReporterThen()" class="form-horizontal well">
+      <div class="form-group">
+        <label for="name">Name
+          <input ng-model="repName" type="text" name="name" class="form-control">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="years">Years of service
+          <input ng-model="repYears" type="number" name="years" class="form-control">
+        <label>
+      </div>
+      <div class="form-group">
+        <label for="bday">Birthday
+          <input ng-model="repBday" type="date" name="bday" class="form-control">
+        <label>
+      </div>
+      <button type="submit" class="btn btn-xs btn-danger">Assign reporter</button>
+    </form>
+  </div>
 </div>

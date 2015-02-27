@@ -7,9 +7,9 @@ reporterAssignments.config(function($stateProvider) {
     templateUrl: "partials/home.html"
   });
 
-  $stateProvider.state('addAssignment', {
-    url: "addAssignment",
-    templateUrl: "partials/addAssignment.html"
+  $stateProvider.state('addReporter', {
+    url: "addReporter/:assignmentId",
+    templateUrl: "partials/addReporter.html"
   });
 
 });

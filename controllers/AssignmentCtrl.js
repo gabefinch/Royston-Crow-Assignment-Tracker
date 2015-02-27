@@ -18,10 +18,6 @@ function AssignmentCtrl($scope, $state, AssignmentFactory) {
   };
 
   $scope.addReporterThen = function() {
-    console.log($scope.repname);
-    console.log($scope.repYears);
-    console.log($scope.repBday);
-
   };
 
 });
