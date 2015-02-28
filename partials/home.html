@@ -1,8 +1,12 @@
 <div class="row" ng-controller="AssignmentCtrl">
   <div>
-    <h4 class="page-header">Assignments <span class="badge">{{assignments.length}}</span></h4>
+      <label for="search">
+        Search Assignments
+        <input ng-model="search" name="search">
+      </label>
+    <h4 class="page-header">Matching Assignments <span class="badge">{{found.length}}</span></h4>
     <ul>
-      <li ng-repeat="assignment in assignments">
+      <li ng-repeat="assignment in found = (assignments | filter:search)">
         <h5><a ng-click="assignment.show = !assignment.show">{{assignment.name}}</a></h5>
           <div ng-show="assignment.show">
             <h6 ng-show="assignment.reporters.length">
