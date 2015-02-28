@@ -3,10 +3,9 @@ reporterAssignments.factory('AssignmentFactory',
   var factory = {};
 
 // ASSIGNMENTS
-  factory.assignments = [
-    {name: "UFO sightings", id: 1, reporters: [{name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) }]},
-    {name: "Health Inspection Fails", id: 2, reporters: [{name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) }]},
-    {name: "National Government Fails", id: 3, reporters: [{name: "Bob Bobson", id: 1, yearsWorked: 13, birthday: Date(1978, 1, 1) }]},
+  factory.assignments = [{name: "UFO sightings", id: 1, reporters: [] },
+    {name: "Notable Roadkill", id: 2, reporters: [] },
+    {name: "New folks in town", id: 3, reporters: [] }
   ];
 
   factory.addAssignment = function(name) {
@@ -17,9 +16,13 @@ reporterAssignments.factory('AssignmentFactory',
   };
 
 // REPORTERS
-
   factory.addReporter = function(assignment, name, years, bday) {
-    assignment.reporters.push({name: name, years: years, bday: bday});
+    assignment.reporters.push({
+      name: name,
+      years: years,
+      bday: bday,
+      id: assignment.reporters.length + 1
+    });
   };
 
   return factory;

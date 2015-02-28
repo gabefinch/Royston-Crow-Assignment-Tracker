@@ -17,7 +17,4 @@ function AssignmentCtrl($scope, $state, AssignmentFactory) {
     $scope.reporterForm = false;
   };
 
-  $scope.addReporterThen = function() {
-  };
-
 });

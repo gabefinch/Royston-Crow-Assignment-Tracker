@@ -12,4 +12,9 @@ reporterAssignments.config(function($stateProvider) {
     templateUrl: "partials/addReporter.html"
   });
 
+  $stateProvider.state('detailReporter', {
+    url: "detailReporter/:assignmentId/:reporterId",
+    templateUrl: "partials/detailReporter.html"
+  });
+
 });
